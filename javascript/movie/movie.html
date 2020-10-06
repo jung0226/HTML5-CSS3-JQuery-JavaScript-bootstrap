@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#content{
+			width:860px;
+			height:114px;
+			margin: 0 auto;
+			padding:0;
+			border:1px solid gray;
+		}
+		#content>*{
+			float:left;		
+		}
+		button{
+			width:20px;
+			height:114px;
+			padding:0;
+			margin:0;
+		}
+		#imgdiv{
+			padding:0;
+			margin:0;
+			width:820px;
+			height:114px;
+			float:left;
+			overflow:hidden;
+		}
+		#img{		
+			width:1640px;
+			height:114px;			
+			overflow:hidden;
+		}		
+	</style>
+	<script>
+		var imgName=['movie01.png','movie02.png','movie03.png','movie04.png','movie05.png','movie06.png',
+			'movie07.png','movie08.png','movie09.png','movie10.png','movie11.png','movie12.png','movie13.png',
+			'movie14.png','movie15.png','movie16.png','movie17.png','movie18.png','movie19.png','movie20.png'];
+		var img="";
+		function setImg(){
+			for(i=0;i<imgName.length;i++){
+				img +="<a href=\'#\'><img src='postImg/"+imgName[i]+"' /></a>";
+			}
+			document.getElementById("img").innerHTML=img;
+		}
+		
+		var interval;
+		var xStep=10;
+		function imgslide(){
+			var img2 = document.getElementById("imgdiv");
+			img2.scrollBy(xStep,0);
+			
+			var scroll = img2.scrollLeft;			
+			if(scroll>=836) xStep=-10;
+			if(scroll<=0) xStep=+10;
+			//console.log(scroll);
+		}
+		function leftBtn(){
+			xStep=-10;
+		}
+		function rightBtn(){
+			xStep=+10;
+		}
+		
+		//슬라이드 시작, 멈춤
+		function start(){
+			interval =setInterval('imgslide()',100);
+		}
+		function stop(){
+			clearInterval(interval);
+		}
+	</script>
+</head>
+<body onload="setImg(), start()">
+
+	<div id="content">
+		<button id="left" onclick="leftBtn()">◀ </button>
+		<div id="imgdiv">
+			<div id="img"  onmouseover="stop()" onmouseout="start()" ></div>
+		</div>
+		<button id="right" onclick="rightBtn()">▶</button>
+	
+	</div>
+</body>
+</html>

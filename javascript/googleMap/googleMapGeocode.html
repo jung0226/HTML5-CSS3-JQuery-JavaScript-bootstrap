@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#gMap{
+			width:100%;
+			height:700px;
+			border:1px solid gray;
+		}
+		#searchFrm{
+			position:absolute;
+			top:10px;
+			left:300px;
+		}
+	</style>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiyi8IBKuUJnY0RccI6KvVWJslar5cPWg&callback=initMap"></script>
+	
+</head>
+<body>
+	<div id="gMap"></div><!-- 지도가 표시되는 곳 -->
+	<!-- 지명검색 -->
+	<div id="searchFrm">
+		<input type="text" id="searchMap"/>
+		<input type="button" value="Search" onclick="searchMapStart()"/>
+	</div>
+	<script>
+		var latitude, logitude;
+		//	지명  홈페이지 주소 팝업 나올 이미지
+		var addr, home, popImg;
+		function setBasicData(){
+			latitude = 37.5729503;
+			longitude= 126.9793578;
+			addr=['서울 선유도','서울 뚝섬','서울 잠실종합운동장', '서울 시청'];
+			home=['https://www.eclipse.org', 'https://www.nate.com', 'https://www.nodejs.org', 'https://www.seoul.go.kr'];
+			popImg=['1.jpg','2.jpg','3.jpg','4.jpg'];
+		}
+		//지도표시
+		var map;
+		var geoCode;
+		function initMap(){
+			setBasicData();//초기값을 셋팅
+			//지도의 센터지정
+			var myCenter = new google.maps.LatLng(latitude, longitude);
+			//맵 옵션
+			var option={
+				center:myCenter,
+				zoom:12,
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+			}
+			//맵을 생성하는 객체
+			//								지도 표시할 곳
+			map = new google.maps.Map(document.getElementById("gMap"),option);
+			
+			//한글 지명 또는 빌딩으로 검색하여 마커표시
+			geoCode = new google.maps.Geocoder();
+			
+			for(i=0;i<addr.length;i++){
+				setMapPosition(addr[i], home[i], popImg[i]);				
+			}//for
+		}//initMap
+		
+		function setMapPosition(addr2, home2, popImg2){
+			//			콜백함수(작업을 하고 호출하는 함수)
+			//	(지명이 존재하면 지명과 관련된 정보들을 results에 넣음)	지명, 위도경도 		'OK':지명이 존재한다(status: 지명 존재유무 저장)
+			geoCode.geocode({'address':addr2}, function(results, 			status){
+					//지명이 있으면 지도에 표시
+					if(status=='OK'){
+						//현재지명의 주소로 센터 이동하기
+						map.setCenter(results[0].geometry.location); //results에서 위도, 경도 정보 얻어오기
+						
+						//마커표시
+						var marker = new google.maps.Marker({
+							map:map,//마커를 표시할 지도
+							icon:'gmap_pin.png',//마커 이미지
+							title:results[0]['formatted_address'], //지명의 주소를 구하여 풍서도움말로 표시
+							position:results[0].geometry.location //마커를 표시할 위치
+						});
+						marker.setMap(map);
+						
+						//마커에 마우스 오버시 대화상자 띄우기
+						var lat = results[0]['geometry']['location']['lat']();//위도
+						var lng = results[0]['geometry']['location']['lng']();//위도
+						
+						var popMsg="위도: "+lat;
+							popMsg+="<br/>경도: "+lng;
+							popMsg+="<br/>주소: "+results[0]['formatted_address'];
+							popMsg+="<br/><a href='"+home2+"'><img src='../../img/"+popImg2+"' width='80' height='50'/></a>";
+						
+						var info = new google.maps.InfoWindow({content:popMsg});
+						
+						//마우스 오버시 대화상자 표시하는 이벤트 등록
+						google.maps.event.addListener(marker, 'mouseover', function(){info.open(map, marker)});
+					}else{
+						console.log(addr2+"는 존재하지 않는 지명입니다.");
+					}//if
+				}//function					
+			);//geocode
+		}//setMapPosition
+		//검색어에 입력한 지명으로 지도 표시
+		function searchMapStart(){
+			if(document.getElementById("searchMap").value==""){
+				alert("검색할 지명, 건물명을 입력 후 사용하세요");
+				return false;
+			}
+			setMapPosition(document.getElementById("searchMap").value, "https://wwww.daum.net", 'heart.png');
+		}
+	</script>
+</body>
+</html>

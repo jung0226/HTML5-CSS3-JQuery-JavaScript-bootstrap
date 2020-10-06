@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	input{
+		width:100px;
+		height:40px;
+		font-size:2em;
+	}
+</style>
+<script>
+
+	$(function(){
+		var i=1;
+		//$('div').css('font-size','15pt');
+		//console.log($('div').css('font-size'));
+		
+		//1em = 16px;
+		$('input').click(function(){
+			var idx=$('input').index(this);
+			var size= parseInt($('#article').css('font-size'));//현재글자크기
+			if(idx==0){
+				size= size-1;
+			}else if(idx==1){
+				size=16;
+			}else if(idx==2){
+				size= size+1;
+			}
+			$('#article').css('font-size',size+'px');
+		});
+		
+	});
+</script>
+</head>
+<body>
+<input type="button" value="-"/>	<!-- 0 -->
+<input type="button" value="0"/>	<!-- 1 -->
+<input type="button" value="+"/>	<!-- 2 -->
+
+<div id='article'>
+9월의 마지막주 월요일인 28일은 전국이 대체로 맑겠다.
+전국의 아침 최저기온은 9∼17도, 낮 최고기온은 21∼26도로 예보됐다. 내륙을 중심으로 낮과 밤의 기온 차가 10도 이상 커 건강 관리에 유의해야 한다. 미세먼지 농도는 전국이 ‘좋음’∼‘보통’ 수준을 보이겠다.
+강원 영서와 전북 동부, 경북 내륙을 중심으로 아침 기온이 영상 10도 이하로 떨어져 서리가 내리는 곳이 있겠으니 농작물 관리에 유의해야 한다.
+</div>
+</body>
+</html>

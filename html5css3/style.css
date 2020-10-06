@@ -1,0 +1,30 @@
+@charset "UTF-8";
+ul{background-color:#ddd}
+
+/* 가상 클래스 :(콜론)붙여서 사용
+	a태그는 밑줄과 각 상태의 글자색이 기본 설정 되어있다. (html에서 설정된 것임.)
+	
+	:link -> 링크를 걸었을 때
+	:visited -> 방문 했을 때
+	:hover -> 마우스 오버일 때
+	:active -> 마우스 누른 상태일 때
+													  del, s, strike태그(html 태그)
+	text-decoration속성: 밑줄(underline), 윗줄(overline), 취소선(line-through), 선 없음(none)
+*/
+a:link{
+	text-decoration:none;
+	color:gray
+}
+a:visited{
+	text-decoration:underline;
+	font-weight:bold;
+	color:gray
+}
+a:hover{
+	text-decoration:underline;
+	color:#00f
+}
+a:active{
+	text-decoration:none;
+	color:#f00
+}

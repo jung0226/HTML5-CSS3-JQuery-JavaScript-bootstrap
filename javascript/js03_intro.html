@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		var imgTag="<img src='../img/heart.png' id='book'/>"; // ;안 써도 오류 안 남.
+		document.write(imgTag);
+	</script>	
+</head>
+<body>
+	<br/>
+	<input type="text" name="username" id="username" value="홍길동"/><br/> <!-- name:서버단, id:뷰단에서 사용. 통상적으로 같은 이름으로 사용. -->
+	<div id="test" style="border: 1px solid gray;"></div>
+	<script>
+		document.getElementById("test").innerHTML = imgTag;
+		/*
+			자바스크립트에 html속성 사용하기
+		*/
+		var username = document.getElementById("username");
+		// username에 이름을 변경
+		//document.getElementById("username").value="hong gil dong";
+		username.value="gill dong";
+		username.type="password";
+		
+		var img = document.getElementById("book");
+		img.src="../img/2.jpg";
+		
+		/*
+			자바스크립트에서 css사용하기
+		*/
+		img.style.border = "3px red solid";
+		username.style.backgroundColor = "#abc";
+		
+		
+		img.title="풍선도움말";
+		
+	</script>
+</body>
+</html>

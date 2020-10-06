@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function setMathTest(){
+			var num=253.654;
+			var r="";
+			
+			r+="Math.PI="+Math.PI+"<br/>";//PI값
+			r+="Math.pow"+Math.pow(5,3)+"<br/>";
+			r+="Math.round"+Math.round();//반올림
+			r+="Math.ceil="+Math.ceil(num);+"<br/>";//올림
+			r+="Math.floor="+Math.floor()+"<br/>";//버림
+			r+="Math.max="+Math.max(34,65,75,3232,43643,2323,12,1)+"<br/>";
+			r+="Math.min="+Math.min(12,34,2342,534)+"<br/>";
+			r+="Math.random="+Math.random()+"<br/>";//0~1사이의 값
+			r+="Math.sqrt="+Math.sqrt(10)+"<br/>";//루트값
+			r+="Math.abs="+Math.abs(-43.43);
+			
+			document.getElementById("result").innerHTML=r;
+			
+		}
+	</script>
+</head>
+<body onload="setMathTest()">
+	<div id="result">
+		
+	</div>
+
+</body>
+</html>

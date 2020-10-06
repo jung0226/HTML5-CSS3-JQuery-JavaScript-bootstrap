@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#imgAll{
+			width:1000px;
+			margin:0 auto;
+		}
+		#imgAll>img{
+			width:20%;
+			height:200px;
+		}
+		/*모달*/
+		#modal{
+			width:100%;
+			position:absolute;
+			left:0;
+			top:0;
+			background-color:gray;
+			opacity:0.5;
+		}
+		/*큰 이미지*/
+		#bigShow{
+			width:400px;
+			height:400px;
+			border:1 solid gray;
+			background-color:#fff;
+			position:absolute;
+			left:200px;
+			top:50px;
+		}
+		#title{
+			font-size:2em;
+			text-aling:center;
+			height:40px;
+			background: yellow;
+		}
+		#bigImg{
+			width:100%;
+			height:360px;
+		}
+		
+		#modal, #bigShow{
+			display:none;
+		}
+	</style>
+	<script>
+		var imgName=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','bg1.png','bg2.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','bg1.png','bg2.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','bg1.png','bg2.jpg',
+			'1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','bg1.png','bg2.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','bg1.png','bg2.jpg'];
+		function imgListSet(){
+			var tag="";
+			for(idx=0;idx<imgName.length;idx++){
+				tag+="<img src='../img/"+imgName[idx]+"' onclick='bigImgShow(this.src)'/>";
+			}
+			document.getElementById("imgAll").innerHTML=tag;
+		}
+		//큰 이미지 보여주기
+		function bigImgShow(filename){
+			//컨텐츠의 높이를 구한다.
+			//var body=document.body.offsetHeight;
+		 	var html = document.documentElement.scrollHeight;//body 마진까포함 길이
+			
+			//클릭위치 좌표
+			left = event.clientX;
+			top = event.clientY;
+
+			//모달의 높이 설정, 보여주기
+			document.getElementById("modal").style.height = html+"px";
+			document.getElementById("modal").style.display="block";
+			
+			//큰 이미지 보여주기
+			var big = document.getElementById("bigShow");
+			big.style.left=left-200+"px";
+			big.style.top=top+5+"px";
+			big.style.display="block";
+			
+			//http://localhost:9090/webApp/img/3.jpg
+			var file = filename.substring(filename.lastIndexOf('/')+1)
+			document.getElementById("title").innerHTML=file;
+			document.getElementById("bigImg").src=filename;
+		}
+		function modalBigHidden(){
+			document.getElementById("bigShow").style.display="none";
+			document.getElementById("modal").style.display="none";
+		}
+		//팝업창 이동
+		var divX, divY, eventX, eventY, moveX, moveY, flag=false;
+		function moveStart(){
+			divX = document.getElementById("bigShow").offsetLeft;
+			divY = document.getElementById("bigShow").offsetTop;
+			
+			eventX = event.clientX;
+			eventY = event.clientY;
+			console.log("d="+divX, divY)
+			
+			flag=true;
+			document.onmousemove = move;
+		}
+		function move(){
+			if(flag){
+				moveX = event.clientX;
+				moveY = event.clientY;
+				
+				var x=moveX-eventX;
+				var y=moveY-eventY;
+				
+				document.getElementById("bigShow").style.left=divX+x+"px";
+				document.getElementById("bigShow").style.top=divY+y+"px";
+			}
+		}
+		function flagSet(){
+			flag=false;
+		}
+		document.onmouseup=flagSet;
+		
+	</script>
+</head>
+<body onload="imgListSet()">
+	<div id="imgAll"></div>
+	<div id="modal"></div>
+	<div id="bigShow" >
+		<div id="title" onmousedown="moveStart()"></div>
+		<img src ="" id="bigImg" onclick="modalBigHidden()"/>
+	</div>
+</body>
+</html>

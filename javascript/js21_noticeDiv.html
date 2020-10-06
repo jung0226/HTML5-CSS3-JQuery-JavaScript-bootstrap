@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		iframe{
+			border: 0px solid red;
+		}
+		#content{
+			width:1000px;
+			margin:0 auto;
+		}
+		
+		/*공지사항*/
+		#notice{
+			width:400px;
+			height:400px;
+			position:absolute;
+			border:1px solid gray;
+			background-color:#fff;
+			overflow:hidden;
+			left:300px;
+			top:100px;
+		}
+		#title>div{
+			height:40px;
+			line-height:40px;
+			float:left;
+		}
+		#title>div:first-child{
+			width:75%;
+			margin-left:10px;
+			background-color:gray;
+		}
+		#title>div:last-child{
+			width:20%;
+			text-align:right;
+			margin-right:10px;
+		}
+	</style>
+	<script>
+		//공지사항 닫기
+		function noticeClose(){
+			document.getElementById("notice").style.display="none";
+		}
+		//공지사항 이동하기
+		function noticeXY(){
+			document.getElementById("notice").style.left="300px";
+			document.getElementById("notice").style.top="100px";			
+		}
+		//공지사항 박스좌표     마우스 다운 좌표
+		var divX, divY, eventX, eventY, moveX, moveY, flag=false;
+		function noticMoveStart(){
+			//divX = parseInt(document.getElementById("notice").style.left); //300px(문자) 계산에 사용하려면 int로 바꾸기
+			divX = document.getElementById("notice").offsetLeft; //300 (숫자)
+			divY = document.getElementById("notice").offsetTop;
+			
+			//클릭한 위치의 x, y좌표 구하기
+			eventX = event.clientX;
+			eventY = event.clientY;
+			
+			flag = true;
+			document.onmousemove = noticeMove;
+		}
+		function noticeMove(){
+			if(flag){
+				//마우스 이동한 곳의 좌표
+				moveX = event.clientX;
+				moveY = event.clientY;
+				
+				//이동한 pixcel 계산하기
+				var x = moveX-eventX;
+				var y = moveY-eventY;
+				
+				document.getElementById("notice").style.left= divX+x+"px";
+				document.getElementById("notice").style.top= divY+y+"px";
+			}
+		}
+		function flagSet(){
+			flag=false;
+		}
+		document.onmouseup = flagSet;
+	</script>
+</head>
+<!-- <body onload="noticeXY()"> -->
+<body>
+	<iframe src="movie/movieSlide.html" width="100%" height="130"></iframe>
+	<hr/>
+	<div id="content">
+		<img src="../img/bg1.png" width="100%"/><br/>
+		일본 집권 자민당의 스가 요시히데 신임 내각 지지율이 74%를 얻으며 역대 세 번째로 높은 기록에 올라선 것으로 나타났다. 스가 총리의 인품과 안정감을 이유로 꼽는 응답이 많았다.
+		일본 니혼게이자이신문은 TV도쿄와 16~17일 긴급 여론조사를 실시한 결과 스가 내각의 지지율이 74%를 기록했다고 18일 보도했다. 정권 출범 당시로 보면 역대 세 번째로 높은 수치다. 닛케이는 “아베 신조 내각에 대한 지난달 조사 때보다 지지율이 19% 올랐다”면서 “스가 내각을 지지하는 이유로 총리 인품과 안정감을 꼽는 응답이 많았다”고 설명했다.
+		1987년 이후 조사 결과를 보면 정권 출번 당시 내각 지지율이 가장 높았던 때는 2001년 고이즈미 준이치로 내각(자민당)으로 지지율이 80%에 달했다. 2위는 2009년 하토야마 유키오 내각(민주당)이 기록했던 75%였다. 2012년 말 출범한 아베 2차 내각은 62%의 지지율로 시작했다.
+	</div>
+	
+	<!-- 공지사항 Div -->
+	<div id="notice">
+		<div id="title">
+			<div onmousedown="noticMoveStart()">공지사항</div>
+			<div onclick="noticeClose()">Close</div>
+		</div>
+		<div id="noticeContent">
+			<img src="../img/2.jpg" width="100%"/>
+		
+		</div>	
+	</div>
+</body>
+</html>

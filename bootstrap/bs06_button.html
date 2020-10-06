@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<input type="button" value="Input(버튼)"/> <!-- form안에 있을 때 submit기능 없음-->
+		<button>Button(버튼)</button> <!-- form안에 있을 때 submit기능이 있음 -->
+		<hr/>
+		<!-- 
+			.btn :기본 클래스
+			
+			배경색
+			*-link, *-light, *-dark, *-primary, *-success, *-warning, *-info, *-danger
+		 -->
+		 <button class="btn btn-success">.btn : 기본 클래스</button><br/><br/>
+		 <!-- 
+		 	버튼에 여백설정하기
+		 	.btn-lg, .btn-md, .btn-sm : 그자크기, 여백설정
+		  -->
+		  <button class="btn btn-primary btn-lg">버튼에 여백설정하기</button><br/><br/>
+		  <button class="btn btn-dark btn-block">btn-block:버튼의 폭을 100%설정</button>
+		  <hr/>
+		  <!-- 버튼의 활성화 비활성화
+		  	.active : 활성화
+		  	.disabled : 비활성화		  	
+		   -->
+		  <button class="btn btn-danger">활성화 안 함</button>
+		  <button class="btn btn-danger active">활성화 함</button>
+		  <button class="btn btn-danger disabled">비활성화 함</button>
+		  <hr/>
+		  <!-- 가로메뉴 만들기 
+		  	.btn-group : 
+		  -->
+		  <div class="btn-group">
+		  	<button class="btn btn-primary">JAVA</button>
+		  	<button class="btn btn-success">JAVASCRIPT</button>
+		  	<button class="btn btn-info">ORACLE</button>
+		  	<button class="btn btn-dark">JSP</button>
+		  	<button class="btn btn-warning">SPRING</button>
+		  	<button class="btn btn-danger">MYBATIS</button>
+		  </div>
+		  <hr/>
+		  <!-- 세로 메뉴 만들기 -->
+		  <div class="btn-group-vertical btn-lg">
+		  	<button class="btn btn-primary">JAVA</button>
+		  	<button class="btn btn-primary">JAVASCRIPT</button>
+		  	<button class="btn btn-primary">ORACLE</button>
+		  	<button class="btn btn-primary">JSP</button>
+		  	<button class="btn btn-primary">SPRING</button>
+		  	<button class="btn btn-primary">MYBATIS</button>
+		  </div>
+		  <hr/>
+		  <!-- 가로방향 서브메뉴 만들기
+		  	getbootstrap.com에서 popper.js를 링크걸어야 한다
+		  -->
+		  <div class="btn-group">
+		  	<button class="btn btn-secondary">애플리케이션</button>
+		  	<button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">웹</button>
+		  		<!-- 서브메뉴 
+		  			.dropdown-menu : 서브메뉴 적용
+		  			.dropdown-item : 서브메뉴 목록에 적용
+		  			.dropdown-toggle : ▷  생성
+		  			
+		  			 data-toggle="dropdown" -> 클릭시 서브메뉴 보여주기
+		  		-->
+		  		<div class="dropdown-menu">
+		  			<a href="#" class="dropdown-item">JSP</a>
+		  			<a href="#" class="dropdown-item">SPRING</a>
+		  		</div>
+		  </div>
+		  <hr/>
+		  <div class="btn-group-vertical">
+		  	<button class="btn">Application</button>
+		  	<button class="btn">Web</button>
+		  	<button class="btn dropdown-toggle" data-toggle="dropdown">Database</button>
+		  		<div class="dropdown-menu">
+		  			<a href="#" class="dropdown-item">Oracle</a>
+		  			<a href="#" class="dropdown-item">Mysql</a>
+		  			<a href="#" class="dropdown-item">DB2</a>
+		  		</div>
+		  </div>
+		  <br/>
+		  <img src="../img/3.jpg"/>
+	</div>
+</body>
+</html>

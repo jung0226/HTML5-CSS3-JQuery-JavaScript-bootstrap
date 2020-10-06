@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>	
+	<style>
+		div{
+			border: 1px solid #ddd;			
+			text-align:center;
+			font-size:20px;
+		}
+		img{
+			width:400px;
+			height:600px;
+			z-index:1;
+		}
+		#img{		
+			width:400px;
+			height:600px;
+			position:absolute;
+			z-index:2;
+		}
+		#clock{
+			width:350px;
+			z-index:10;
+			margin: 10px 10px;
+			position:absolute;
+			left:10px;
+			top:10px;
+			background-color:white;
+		}
+		#calendar{
+			width:350px;
+			height:250px;
+			z-index:10;
+			margin: 10px 10px;
+			position:absolute;
+			left:10px;
+			top:60px;
+			background-color:white;
+		}
+		ul{
+			width:350px;
+			height:250px;
+			margin:0;
+			padding:0;			
+		}
+		li{
+			width:50px;
+			margin:0;
+			padding:0;
+			float:left;
+			list-style-type: none;
+		}
+	</style>
+	<script>
+		var img=['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', 'heart.png'];
+		var i=0;
+		function changeImage(){
+			
+			document.getElementById("img").innerHTML="<img src='../img/"+img[i++]+"'/>";
+			if(img.length<=i) i=0;
+		}
+	</script>
+</head>
+<body>
+	<div id="img"> 
+		<script>
+			changeImage();
+			setInterval('changeImage()',1000);
+		</script>
+	</div>
+		<div id="clock">
+			<script>
+				function clock(){
+					var date = new Date();
+					var dateTxt = date.getHours()+"시";
+					dateTxt += date.getMinutes()+"분";
+					
+					document.getElementById("clock").innerHTML=dateTxt;
+				}
+				clock();
+				setInterval('clock()',500);
+			</script>
+		</div>
+		<div id="calendar">
+			<script>
+				var cal = new Date();
+
+				var lastDay = new Date(cal.getFullYear(),cal.getMonth() + 1, 0).getDate();
+				
+				var calTxt = cal.getFullYear()+"년 ";
+				calTxt += cal.getMonth()+1+"월  <br/><br/>";
+				calTxt += "<ul>"
+				calTxt += " <li> 일  </li>";
+				calTxt += " <li> 월 </li>";
+				calTxt += " <li> 화  </li>";
+				calTxt += " <li> 수  </li>";
+				calTxt += " <li> 목  </li>";
+				calTxt += " <li> 금  </li>";
+				calTxt += " <li> 토  </li>";
+				var space=1;
+				for(space=1;space<=cal.getDay();space++){
+					calTxt +="<li>&nbsp</li>";
+				}
+				var i=1;
+				for(i=1;i<=lastDay;i++){
+					calTxt+="<li>"+i+"</li>";
+				}
+				calTxt+="</ul>"
+				document.getElementById("calendar").innerHTML = calTxt;
+			
+			</script>
+		</div>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Map을 이용한 링크걸기</title>
+</head>
+<body>	
+	<h1>Map태그를 이용하여 여러 페이지로 링크 걸기</h1>
+	<img src="../img/jeju_map.jpg" usemap="#jejuMap"/>
+	<p>
+	신종 코로나바이러스 감염증(코로나19) 유행이 7개월 넘게 이어지고, 방역수칙 위반 사례가 곳곳에서 나타나자 방역당국은 심리방역 붕괴를 우려하고 있다.
+	지난달 16일 서울·경기 지역을 시작으로 19일 수도권 전 지역, 23일 전국으로 사회적 거리두기 2단계가 확대 시행되고, 급기야 30일 거리두기 2.5단계가 시행되면서 일상생활에 제한이 가해졌다. 그만큼 감염병에 대한 공포와 불안감도 증가했지만, 피로감 또한 극심해지고 있다.
+	</p>
+	<map name="jejuMap">
+		<!-- 사각형 모양으로 링크 걸기 
+			shape 속성: rect(사각형), circle(원모양), poly(다각형)
+			coords 속성: 좌표를 설정
+								x1, y1, x2, y2
+		-->
+		<area shape="rect" coords="250,130,330,180" href="https://www.airport.co.kr/jeju/main.do" target="_blank" title="제주공항" style="outline:none"/>
+		<!-- 				 		   x,  y, r(반지름)-->
+		<area shape="circle" coords="330,270,40" href="https://www.jeju.go.kr/hallasan/index.htm" target="_blank"/>
+		<!--  					   x,y,x,y,x,y	한쪽방향으로 x,y좌표를 순서대로 표기 -->
+		<area shpae="poly" coords="70,210,130,240,70,290,20,245" href="../index.html"/>
+	</map>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function calculator(){
+			var n1 = document.getElementById("su1").value;
+			var n2 = document.getElementById("su2").value;
+			
+			//값의 입력 유무 확인
+			//javascript는 null이 없음.
+			if(n1==""){
+				alert("첫 번째 수를 입력하세요.");
+				document.getElementById("su1").focus();
+				return false; //return을 만나면 함수 실행이 끝남.
+			}
+			if(n2==""){
+				alert("두 번째 수를 입력하세요.");
+				document.getElementById("su2").focus();
+				return false;
+			}
+			//계산
+			var n1Int = parseInt(n1);
+			var n2Int = parseInt(n2);
+			var hap = n1Int+n2Int;
+			var cha = n1Int-n2Int;
+			var gob = n1Int*n2Int;
+			var mok = n1Int/n2Int; //%
+			
+			var result = n1Int+"+"+n2Int+"="+hap+"<br/>";
+			result += n1Int+"-"+n2Int+"="+cha+"<br/>";
+			result += n1Int+"*"+n2Int+"="+gob+"<br/>";
+			result += n1Int+"/"+n2Int+"="+mok+"<br/>";
+			
+			document.getElementById("result").innerHTML=result;			
+		}
+	</script>
+</head>
+<body>
+	첫 번째 수: <input type="text" name="su1" id="su1"/>
+	두 번째 수: <input type="text" name="su2" id="su2"/>
+	<input type="button" value="계산하기" onclick="calculator()"/>
+	<div id="result" style="background-color:lightblue"></div>
+</body>
+</html>

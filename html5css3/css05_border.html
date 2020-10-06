@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#d1{background:yellow}
+		/*
+			선, 테두리
+			border-style : 선 모양(solid(실선), dotted(점선), dashed(- 점선), double(이중선), none(선 없음), 
+								groove(홈이 파인 선), inset(볼록한 선) )
+			border-width : 선의 두께 (px 단위)
+			border-color : 선의 색상(rgb코드, 컬러명)
+		*/
+		div{
+			/*시계방향으로 셋팅. 안 쓰면 맞은편의 것이 셋팅됨. 이미 그룹화가 된 것임.*/
+			/*border-style:solid dotted double;*/
+			/*border-top-style:dashed;
+			border-right-style:dotted;
+			border-bottom-style:double;
+			border-left-style:groove;
+			*/
+			/*border-width: 5px, 10px;*/
+			/*border-width:5px;
+			border-top-width: 1px;
+			border-right-width: 5px;
+			border-bottom-width: 10px;
+			border-left-width: 15px;
+			*/
+			
+			/*border-color:lightblue pink;*/
+			
+			/*border의 그룹화*/
+			border: solid blue 1px;			
+			
+		}
+		h1{
+			border:1px solid green;
+		}
+		ul{
+			border: 1px dotted blue;
+			/*둥근 사각형*/
+			border-radius: 10px; /*왼쪽 상단부터 시계방향으로 적용*/
+			
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="d1">
+		div태그<br/>
+		dddddd<br/>
+		div태그<br/>
+		dddddd<br/>
+		div태그<br/>
+		dddddd<br/>
+	</div>
+	<div>aaaaa</div>
+	<div>bbbbb</div>
+
+	<h1>Border Style</h1>
+	<ul>
+		<li>맨드라미</li>
+		<li>코스모스</li>
+		<li>해바라기</li>
+		<li>히야신스</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#mainDate{
+			width:440px;
+			height:440px;
+			padding:20px;
+			margin:0 auto;
+			border:1px solid gray;
+			background-image:url(../img/4.jpg);
+			background-size:100% 440px;
+		}
+		/*시계*/
+		#clock{
+			height:100px;
+			line-height:100px;
+			background-color:#fff;
+			margin-bottom:20px;
+			font-size:4em;
+			text-align:center;
+			opacity:0.7;
+			
+		}
+		/*달력*/
+		#calendar{
+			height:320px;
+			background-color:#fff;
+			opacity:0.7;
+		}
+		#title{
+			height:80px;
+			font-size:2em;
+			line-height:80px;
+			text-align:center;
+		}
+		ul{
+			margin:0;
+			padding:0;
+			list-style-type:none;
+		}
+		li{
+			float:left;
+			width:14.28%;
+			text-align:center;
+			font-size:1.5em;
+		}
+	</style>
+	<script>
+		var imgList=['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', 'heart.png'];
+	
+	
+		var now= new Date(); //현재 날짜, 시간
+		var year = now.getFullYear();//년도
+		var month = now.getMonth()+1;//월
+		//1일에 대한 요일
+		//현재 날자를 1일로 변경
+		now.setDate(1);//now = new Date(year, month-1,1);
+		var week = now.getDay(); //일->0
+		//마지막 날 - 이번달 0일인 경우 그 전달 마지막 날이 구해진다.
+		//	new Date(2020,9,0)
+		var lastDay = new Date(year, month, 0).getDate(); // 10월 0일 -> 9월 마지막 날이 구해짐 
+		
+		//달력 만들기
+		function setCalendar(){
+			//title(년, 월)
+			var tag = "<div id='title'>"+year+"년"+month+"월</div>";
+			var weekName=['일','월','화','수','목','금','토'];
+			tag += "<ul>";
+			for(i=0; i<weekName.length; i++){
+				tag+="<li>"+weekName[i]+"</li>";
+			}
+			//공백
+			for(i=0;i<week;i++){
+				tag+="<li>&nbsp</li>";
+			}
+			//날짜
+			for(i=1;i<=lastDay;i++){
+				tag+="<li>"+i+"</li>";
+			}
+			tag+="</ul>";
+			document.getElementById("calendar").innerHTML = tag;
+		}
+		//시계 - 1초에 한 번씩 호출
+		var idx=0;//이미지의 index로 사용할 변수
+		
+		function setClock(){
+			//현재 날짜+시간
+			now = new Date();
+			//시, 분, 초
+			var hour = now.getHours();
+			var minute = now.getMinutes();
+			var second = now.getSeconds();
+			
+			//화면에 표시	00:00:00
+			//시분초 문자열 만들기
+			var ClockTxt = "";
+			if(hour<10){
+				ClockTxt+="0"+hour;
+			}else{
+				ClockTxt+=hour;
+			}
+			if(minute<10){
+				ClockTxt+=":0"+minute;
+			}else{
+				ClockTxt+=":"+minute;
+			}
+			if(second<10){
+				ClockTxt+=":0"+second;
+			}else{
+				ClockTxt+=":"+second;
+			}
+			
+			document.getElementById("clock").innerHTML = ClockTxt;
+			document.getElementById("mainDate").style.backgroundImage="url(../img/"+imgList[idx++]+")";
+			if(idx>=imgList.length){
+				idx=0;
+			}
+		}
+	</script>
+</head>
+<body onload="setCalendar(); setInterval('setClock()',1000)">
+	<div id="mainDate">
+		<div id="clock"></div>
+		<div id="calendar"></div>
+	</div>
+</body>
+</html>

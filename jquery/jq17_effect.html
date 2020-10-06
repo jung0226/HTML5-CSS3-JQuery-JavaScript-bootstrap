@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	img{
+		width:450px;
+		height:500px;
+	}
+</style>
+<script>
+	$(function(){
+		//숨기기
+		$('#hide').click(function(){
+			//이미지 숨기기		 속도 : "slow", "fast", "normal", 밀리초
+			$("#i").hide("slow"); //폭, 높이, 투명도를 이용해서 변환
+		});
+		//보여주기
+		$("#show").on('click',function(){
+			$('#i').show(2000);
+		});
+		//toggle():숨김, 보여주기를 반복한다.
+		$("#toggle").on('click', function(){
+			$('#i').toggle("fast");
+		});
+		//점점 흐리게
+		$("#fadeOut").click(function(){
+			$('#i').fadeOut(3000);
+		});
+		//점점 진하게
+		$("#fadeIn").click(function(){
+			$('#i').fadeIn(2000);
+		});
+		//fadeToggle() : 점점흐리게, 점점진하게를 톡글로 적용한다.
+		$("#fadeToggle").click(function(){
+			$('#i').fadeToggle(2000);
+		});
+		//대상의 크기를 설정하여야 하낟.
+		//점점 접히게
+		$('#slideUp').click(function(){
+			$('#i').slideUp(2000);
+		});
+		//점점 펼치게
+		$('#slideDown').click(function(){
+			$('#i').slideDown(2000);
+		});	
+		$('#slideToggle').click(function(){
+			$('#i').slideToggle(2000);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="숨기기(hide)" id="hide"/>
+	<input type="button" value="보여주기(show)" id="show"/>
+	<input type="button" value="토글(toggle)" id="toggle"/>
+	<button id="fadeOut">점점 흐리게(fadeOut)</button>
+	<button id="fadeIn">점점 진하게(fadeIn)</button>
+	<button id="fadeToggle">토글(fadeToggle)</button>
+	<button id="slideUp">점점접히게(slideUp)</button>
+	<button id="slideDown">점점펼치게(slideDown)</button>
+	<button id="slideToggle">slideToggle</button>
+	<hr/>
+	<img src="../img/5.jpg" id="i"/>
+</body>
+</html>

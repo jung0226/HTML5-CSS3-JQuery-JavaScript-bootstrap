@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgColor="pink" link="red" alink="blue" vlink="green">
+<a href="js01_start.html">자바스크립트1</a>
+<a href="https://www.nate.com">네이트</a>
+<hr/>
+	<script>
+		document.title="도큐멘트에서 제목설정";
+		document.write("document.location-> "+document.location); //프로토콜,port,컨텍스트,폴더,파일명
+		document.write("<br/>document.URL-> "+document.URL);
+		document.write("<br/>document.domain-> "+document.domain);
+		
+		document.write("<br/>document.lastModified-> "+document.lastModified);//파일 마지막 수정날짜
+		
+		//document.bgColor="lightblue";
+		document.write("<br/>document.bgColor-> "+document.bgColor);
+		document.write("<br/>document.linkColor-> "+document.linkColor+","
+						+"alinkColor-> "+document.alinkColor+", vlinkColor-> "+document.vlinkColor);
+		
+		//쿠키
+		document.cookie="abcd";
+		document.write("<br/>document.wirte-> "+document.cookie);
+		
+	</script>
+
+</body>
+</html>

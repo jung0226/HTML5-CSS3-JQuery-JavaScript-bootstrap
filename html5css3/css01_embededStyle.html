@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>임베디드 스타일</title>
+	<style>
+		/*
+			선택자
+			태그 선택자 : html태그를 이용한 선택자, 마지막에 적힌 것이 적용됨.
+				배경색	    각각의 rgb컬러가 같으면 한 번만 적어도 됨.		
+		*/
+		body {background-color : #ddd}
+		h1 {color: #00f}
+		/*아이디 선택자*/
+		#txt {background-color : pink}
+		/*클래스 선택자*/
+		.fnt{
+			color: red; 
+			background-color: yellow
+		}
+		
+		h1.fnt{color:pink}
+		h1#txt{color:green}
+		
+		h1#txt, li.fnt{background-color:black}
+	</style>
+</head>
+<body>
+	<h1 id = "txt">스타일 시트 연습 중</h1>
+	<ul>
+		<li class="fnt">java</li>
+		<li>javascript</li>
+		<li class ="fnt">html</li>
+		<li>css</li>
+	</ul>
+	<h1 class="fnt">스타일 시트 연습 중</h1>
+</body>
+</html>

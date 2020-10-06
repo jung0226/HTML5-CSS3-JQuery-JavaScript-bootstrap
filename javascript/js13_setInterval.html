@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>setInterval : 일정한 시간 간격으로 함수를 재호출</title>
+	<style>
+		#view>img{width:300px; height:300px;}
+	</style>
+	<script>
+		var img=['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', 'heart.png'];
+		var i=0;
+		var interval;
+		function changeImage(){
+			document.getElementById("view").innerHTML="<img src='../img/"+img[i++]+"'/>";
+			//index를 0으로 초기화
+			if(img.length<=i) i=0;
+			//interval 정지시키기
+			if(i==4){
+				clearInterval(interval);
+			}
+		}
+		//		setInterval('호출함수', 밀리초); 더블 따옴표도 가능
+	</script>
+</head>
+<body onload="interval = setInterval('changeImage()',1000);">
+	<div id= 'view'>
+		
+	</div>
+
+</body>
+</html>

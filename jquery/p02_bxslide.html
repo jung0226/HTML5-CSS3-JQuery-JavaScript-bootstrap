@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	https://github.com/stevenwanderski/bxslider-4에서 다운로드 
+	src->js폴더에 있는 bxlider.js를 plugin폴더에 옮기기 3,4번도 실행
+	1. jquery
+	2. easing 스크립트 파일
+	3. bxslider 스크립트
+	4. bxslider 스타일시트 파일
+	5. 컨트롤러 이미지 폴더 
+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="plugin/jquery.easing.1.3.js"></script>
+<script src="plugin/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="plugin/jquery.bxslider.css" type="text/css"/>
+<style>
+	#bxslider img{
+		width:800px;
+		height:450px;
+	}
+	ul, li{
+		margin:0;
+		padding:0
+	}
+</style>
+<script>
+	$(function(){
+		$('#bxslider').bxSlider({
+			mode: 'horizontal'//화면전환방법 'horizontal'(기본), 'vertical', 'fade'
+			, slideWidth:800
+			, slideHeight:600
+			, speed:2000 //변환속도
+			, auto:true //자동시작 (true, false(기본))
+			, randomStart:true //시작슬라이드 랜덤(true, false)
+			, captions:true //title속성의 값을 설명으로 표시한다.(true, false)
+			, infiniteLoop: false //반복여부(true, false)
+			, hideControlOnEnd: true//처음과 마지막에 컨트롤러 표시여부 설정(true, false)
+			//easing
+			, useCSS:false //easing사용여부 설정(true(easing안 함), false(easing사용))
+			, easing:'easeOutElastic'
+			//콜백함수
+			, onSliderLoad:function(){//슬라이드 로딩이 완료되면 호출된다.
+				$('#msg').append("슬라이드 로딩이 완료되었습니다.");
+			}
+			, onSlideAfter:function(){//슬라이드가 움직인 후 호출되는 함수
+				$('#msg').append("<br/>슬라이드가 움직인 후 호출되는 함수");				
+			}
+		});
+	});
+
+</script>
+</head>
+<body>
+	<ul id="bxslider">
+		<li><a href="#"><img src="../img/1.jpg" title="첫번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/2.jpg" title="두번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/3.jpg" title="세번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/4.jpg" title="네번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/5.jpg" title="다섯번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/bg1.jpg" title="여섯번째 슬라이드"/></a></li>
+		<li><a href="#"><img src="../img/bg2.jpg" title="일곱번째 슬라이드"/></a></li>
+	</ul>
+	<div id="msg"></div>
+
+</body>
+</html>

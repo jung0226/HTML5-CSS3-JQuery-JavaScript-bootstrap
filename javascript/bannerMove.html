@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body{
+			margin:0;
+			padding:0;
+		}
+		header{
+			width:800px;
+			height:auto;
+			margin:0 auto;
+		}
+		#blue{
+			width:800px;
+			height:100px;
+			background-color:lightblue;
+		}
+		#pink{
+			width:800px;
+			height:100px;
+			background-color:pink;
+		}
+		#pink>input{
+			padding:5px;
+			font-size: 20px;
+		}
+		hr{
+			margin:0;
+			border-top:2px solid blue;
+			position:relative;
+		}
+		
+		/*내용*/
+		#content{
+			width:1000px;
+			margin:0 auto;
+		}
+		#content>*{
+			float:left;
+		}
+		section, img{
+			width:800px;
+		}
+		/*배너*/
+		#left{
+			width:100px;
+			height:300px;
+			background-color:yellow;
+			position:relative;
+		}
+		#right{
+			width:100px;
+			height:400px;
+			background-color:orange;
+			float:right;
+			position:relative;
+		}
+	</style>
+	<script>
+		//글자
+		var i=0
+		function headerTxt(){
+			var tf = document.getElementById("txt");
+			var javaTxt = ['자','바','스','크','립','트','레','이','아','웃'];
+			
+			tf.placeholder+=javaTxt[i];
+			i++;
+			if(i>javaTxt.length) {
+				tf.placeholder="";
+				i=0;
+			}
+			
+		}
+		//배너 이동		
+		function banner(){
+			var hHeight = document.getElementById("head").offsetHeight; //header높이
+			var scroll = document.documentElement.scrollTop;//스크롤 위치
+			var left = document.getElementById("left");//배너
+			var right = document.getElementById("right");
+			var line = document.getElementById("line");
+			
+			var y=scroll-hHeight;
+			if(scroll>hHeight){				
+				left.style.top=y+"px";
+				right.style.top=y+"px";
+				line.style.top=y+"px";
+			}else if(scroll==0||scroll<hHeight){
+				left.style.top=0+"px";
+				right.style.top=0+"px";
+				line.style.top=0+"px";
+			}			
+		}
+		
+	</script>
+</head>
+<body onload="setInterval('banner()',1); setInterval('headerTxt()',300)">
+	<header id="head">
+		<div id="blue" onclick="this.style.display='none'"></div>
+		<div id="pink"><input type="text" id="txt" width="500px"/> </div>
+	</header>
+	<hr id="line"/>
+	<div id="content">
+		<aside id="left">aa</aside>
+		<section>
+			<img src="../img/bg1.png"/>
+			<img src="../img/bg2.jpg"/>
+			<img src="../img/bg3.jpg"/>
+		</section>
+		<aside id="right">bb</aside>
+	</div>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+<style>
+	/*
+	.jumbotron{
+		padding:10px;
+	}
+	*/
+</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 
+			.jumbotron : 회색배경에 패딩이 설정, 테두리가 둥글게 스타일이 적용
+		 -->
+		<div class="jumbotron">
+			<h1>Jumbotron을 이용한 스타일</h1>
+		</div>
+		<p class="jumbotron">[서울경제] 빅히트엔터테인먼트 일반청약 마지막 날 일반투자자들의 청약 열기가 뜨겁다. 점심시간에만 증거금이 10조원 가량 늘었는데 일부 증권사의 경우 통화문의가 늘면서 자동응답시스템(ARS) 직원 연결이 제한되고 있다. 오전 일찍 SK바이오팜의 코스피 역대 최다 증거금 기록을 넘어서면서 최종 경쟁률에도 관심이 쏠린다.
+		6일 투자은행(IB) 업계에 따르면 이날 12시30분 현재 빅히트 일반청약증거금이 34조원을 돌파했다. 증권사별 경쟁률은 한국투자증권이 438대1로 가장 높고 NH투자증권 300대1, 미래에셋대우 300대1, 키움증권 290대1 등이다. 11시 기준 청약 증거금이 약 34조원이었던 점을 고려할 때 한 시간 여만에 청약증거금이 10조원 가량 늘어난 셈이다. 
+		카카오게임즈의 코스닥 청약 기록(경쟁률 1,524대1, 증거금 약 59조원)은 깰지는 아직 미지수지만 SK바이오팜의 코스피 역대 최다 청약증거금(약 31조원) 기록은 넘어섰다.
+		</p>
+		<!-- 
+			.table : 전체 폭을 100%로 설정하고 상하 보더가 표시된 표를 설정
+			.table-striped : 줄단위 배경색 설정
+			.table-bordered: 표에 선만표시
+			.table-hover : 마우스 오버 아웃시 배경색 변경
+			.table-dark : 표의 배경색을 어두운 색으로
+		 -->
+		<table class="table table-hover table-dark">
+			<thead>
+			<tr>
+				<td>번호</td>
+				<td>이름</td>
+				<td>연락처</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>100</td>
+				<td>홍길동1</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr>
+				<td>200</td>
+				<td>홍길동2</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr>
+				<td>300</td>
+				<td>홍길동3</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>홍길동4</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr>
+				<td>500</td>
+				<td>홍길동5</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr>
+				<td>600</td>
+				<td>홍길동6</td>
+				<td>010-7777-7777</td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td colspan="3">문의사항은 02-2222-2222로 연락바랍니다.</td>
+			</tr>
+			</tfoot>
+		</table>
+		
+		<!-- 
+			색상명
+			*-primary : blue	
+			*-success : green
+			*-danger : red
+			*-info :blue+green
+			*-warning: yellow
+			*-active : gray
+			*-secondary: gray
+			
+			
+		-->
+		<table class="table">
+			<thead>
+			<tr class="table-primary">
+				<td>번호</td>
+				<td>이름</td>
+				<td>연락처</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="table-success">
+				<td>100</td>
+				<td>홍길동1</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr class="table-danger">
+				<td>200</td>
+				<td>홍길동2</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr class="table-info">
+				<td>300</td>
+				<td>홍길동3</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr class="table-warning">
+				<td>400</td>
+				<td>홍길동4</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr class="table-active">
+				<td>500</td>
+				<td>홍길동5</td>
+				<td>010-7777-7777</td>
+			</tr>
+			<tr class="table-secondary">
+				<td>600</td>
+				<td>홍길동6</td>
+				<td>010-7777-7777</td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td colspan="3">문의사항은 02-2222-2222로 연락바랍니다.</td>
+			</tr>
+			</tfoot>
+		</table>
+	</div>
+	
+</body>
+</html>

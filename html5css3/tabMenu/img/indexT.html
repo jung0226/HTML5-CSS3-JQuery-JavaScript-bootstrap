@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		ul{
+			margin:0;
+			padding:0;
+			list-style-type:none;
+		}
+		#main{
+			overflow:auto;
+			width:600px;
+		}
+		#leftDiv, #rightDiv{
+			float:left;
+		}
+		/*왼쪽 상단*/
+		#leftDiv{
+			width:400px;
+		}
+		#leftDiv>ul{
+			overflow:auto;
+		}
+		#leftDiv>ul>li{
+			float:left;
+			width:158px;
+			height:132px;
+			padding:10px;
+			border:1px solid #ddd;
+			margin:0 20px 20px 0;
+			padding:10px;
+			background-color: #eee;
+		}
+		.txtContent>li{
+			float:left;
+			margin-bottom:10px;
+			overflow:hidden;
+			
+			line-height:30px;/*한 행(줄)의 크기*/
+			height:60px; /*보여지는 행(줄)의 수와 크기를 똑같이.*/
+			display:-webkit-box;
+			-webkit-line-clamp:2;/*행(줄)의 수*/
+			-webkit-box-orient:vertical;
+			text-overflow:ellipsis;/*글자가 범위를 넘어가면 ...으로 표시*/
+		}
+		.txtContent>li:first-child{
+			color:rgb(40,188,211);
+		}
+		.txtContent>li:nth-child(2n+1){
+			width:30px;
+			font-size:20px;
+		}
+		.txtContent>li:nth-child(2n){
+			width:128px;
+		}
+		
+		/*오른쪽*/
+		#rightDiv{
+			width:178px;
+			height:327px;
+			border:1px solid #ddd;
+			margin:0 20px 20px 0;
+		}
+		/*아래쪽*/
+		#bottomDiv{
+			clear:left;
+		}
+		#bottomDiv>ul>li{
+			float:left;
+			width:178px;
+			height:150px;
+			border:1px solid #ddd;
+			margin: 0 20px 20px 0;
+			font-size:13px;
+			line-height:24px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<!-- 왼쪽 상단 -->
+		<div id="leftDiv">
+			<ul>
+				<li>
+					<ul class="txtContent">
+						<li><b>Q</b></li>
+						<li><b>헐리우드 영화에서 러시안인이 주로 악당으로 헐리우드 영화에서 러시안인이 주로 악당으로</b></li>
+						<li><b>A</b></li>
+						<li>냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요. 냉전시대의 산물입니다. </li>
+					</ul>
+				</li>
+				<li>
+					<ul class="txtContent">
+						<li><b>Q</b></li>
+						<li><b>'독도'이름의 유래를 알려주세요.</b></li>
+						<li><b>A</b></li>
+						<li>독도와 관련된 명칭은 시대에 따라 문헌에 아주 다양하게 나옵니다. 조선 </li>
+					</ul>				
+				</li>
+				<li>
+					<ul class="txtContent">
+						<li><b>Q</b></li>
+						<li><b>매실청은 당뇨에 해로운가요?</b></li>
+						<li><b>A</b></li>
+						<li>매실청은 설탕으로 매실을 발효시킨 식품으로 당분이 많이 함유되어 있습니다. </li>
+					</ul>				
+				</li>
+				<li>
+					<ul class="txtContent">
+						<li><b>Q</b></li>
+						<li><b>108배가 다이어트에 도움이 되나요?</b></li>
+						<li><b>A</b></li>
+						<li>108배를 하면 땀도 굉장히 많이 나고 전신운동이 되기 때문에 운동 효과 </li>
+					</ul>				
+				</li>
+			</ul>
+		</div>
+		<!-- 오른쪽 -->
+		<div id="rightDiv">
+			<img src="tab2_1.png"/>
+		</div>
+		<!-- 아래쪽 -->		
+		<div id="bottomDiv">
+			<ul>
+				<li>
+					<img src="tab2_2.png"/> <br/>
+					<b>견과류의 하루 적정 섭취량</b> <br/>
+					견과류
+				</li>
+				<li>
+					<img src="tab2_3.png"/> <br/>
+					<b>날벌레가 빛에 몰려드는 이유</b> <br/>
+					곤충				
+				</li>
+				<li>
+					<img src="tab2_4.png"/> <br/>
+					<b>냉면의 유래와 역사</b> <br/>
+					음식				
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>

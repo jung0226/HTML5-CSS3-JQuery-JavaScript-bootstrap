@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		#content{
+			width:780px;
+			padding: 5px 15px;
+			margin: 0 auto;
+			background:yellow;
+			overflow: auto;
+		}
+		#content>img{
+			width:150px;
+			height:130px;
+			float:left;
+			margin-bottom:5px;
+		}
+		#imgPop{
+			width:300px;
+			height:400px;
+			position:absolute;
+			display:none;
+			border:1px solid black;
+			background:#fff;
+			overflow:auto;
+			
+		}
+		#imgName{
+			width:100%;
+			height:40px;
+			background-color:#ddd;
+			text-align:center;
+			line-height:40px;
+			
+		}
+	</style>
+	<script>
+		
+		function setImg(){
+			var img="";
+			for(i=1;i<=10;i++){
+				img+="<img src='../img/1.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/2.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/3.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/4.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/5.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/bg1.png' onclick='popup(this.src)'/>";
+				img+="<img src='../img/bg2.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/bg3.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/bg4.jpg' onclick='popup(this.src)'/>";
+				img+="<img src='../img/bg5.jpg' onclick='popup(this.src)'/>";
+			}
+			document.getElementById("content").innerHTML=img;
+		}
+		function popup(imgId){
+			//클릭한 곳 위치의 x,y좌표
+			eventX = event.clientX;
+			eventY = event.clientY;
+			document.getElementById("imgPop").style.display="block";
+			document.getElementById("imgPop").style.left=eventX+"px";
+			document.getElementById("imgPop").style.top=eventY+"px";
+			
+			//이미지 이름
+			var nameidx= imgId.indexOf("/img/")
+			var name = imgId.slice(nameidx+5,imgId.length);
+			document.getElementById("imgName").innerHTML = name;
+			
+			//이미지 띄우기
+			var pimg = "<img src='"+imgId+"' width='100%' onclick='closeImg()'/>"
+			document.getElementById("imgDiv").innerHTML=pimg;
+			
+			//배경 비활성화(안됨)
+			document.getElementsByTagName("body").disabled=true;
+
+		}
+		//이미지 클릭시 팝업창 사라짐
+		function closeImg(){
+			document.getElementById("imgPop").style.display="none";
+		}
+		
+		//팝업창 이동
+		var divX, divY, eventX, eventY, moveX, moveY, flag=false;
+		function moveStart(){
+		}
+		
+		
+	</script>
+</head>
+<body onload="setImg()">
+	<div id="content">
+	</div>		
+	<!-- 사진 팝업Div-->
+	<div id="imgPop">
+		<div id="imgName"></div>
+		<div id="imgDiv"></div>
+	</div>
+</body>
+</html>

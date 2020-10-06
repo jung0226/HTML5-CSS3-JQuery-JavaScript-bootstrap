@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	https://gist.github.com/coolniikou/665255
+	
+	1. jquery
+	2. innerfade.js
+
+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="plugin/jquery.innerfade.js"></script>
+<style>
+	ul, li{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	#imgInner img{
+		width:500px;
+		height:400px;
+	}
+	#imgInner{
+		width:500px;
+		height:400px;		
+	}
+	div{
+		height:400px;
+	}
+	div:nth-child(2){
+		width:500px;
+		border:2px solid gray;
+		font-size:1.5em;
+	}
+	#textInner li{	
+		background-color:lightblue;
+	}
+</style>
+<script>
+	$(function(){
+		//이미지에 innerfade적용하기
+		$('#imgInner').innerfade({
+			animationtype: 'slide' // 'slide', 'fade', 기본: 'fade'
+			, speed : 'slow'// 'slow' ,'fast', 'normal', 밀리초
+			, timeout: 2000 //쇼 대기시간
+			, type: 'random'// 'random', 'sequence'(기본), 'random_start'(출발을 랜덤으로)
+		});
+		
+		//텍스트에 innerfade적용하기
+		$('#textInner').innerfade({
+			animationtype:'slide',
+			speed:2000,
+			type:'random_start'
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<ul id="imgInner">
+			<li><a href="https://www.nate.com"><img src="../img/1.jpg"/></a></li>
+			<li><a href="https://www.naver.com"><img src="../img/2.jpg"/></a></li>
+			<li><a href="https://www.daum.net"><img src="../img/3.jpg"/></a></li>
+			<li><a href="../index.html"><img src="../img/4.jpg"/></a></li>
+			<li><a href="https://www.gmarket.co.kr"><img src="../img/5.jpg"/></a></li>
+			<li><a href="#"><img src="../img/bg1.jpg"/></a></li>
+			<li><a href="#"><img src="../img/bg2.jpg"/></a></li>
+			<li><a href="#"><img src="../img/bg3.jpg"/></a></li>
+			<li><a href="#"><img src="../img/bg4.jpg"/></a></li>
+		</ul>
+	</div>
+	<div>
+		<ul id="textInner">
+			<li>경기도농업기술원은 오는 8일부터 30일까지 가정에서 곤충과 가까워질 수 있는 ‘2020 온라인 경기곤충페스티벌’을 진행한다고 5일 밝혔다.사회적 거리두기를 고려해 지난해와 달리 올해는 비대면으로 진행된다.</li>
+			<li>이번 축제는 △경기곤충 사생대회 △경기곤충 사진공모전 △경기곤충 과학교실 △곤충 온라인전시 △곤충쇼핑몰 등 다양한 행사가 준비돼 있다.</li>
+			<li>‘경기곤충 사생대회’는 도내 유치원생, 초등학생들을 대상으로 자연과 곤충을 주제로 직접 그린 그림을 통해 창의성, 순수성, 개성 등의 실력을 겨룬다.</li>
+			<li>‘경기곤충 사진공모전’은 전 국민을 대상으로 한 온라인 사진 경연대회로, 누구나 곤충과 자연, 사람과 관련된 사진을 찍어 접수하면 심사를 통해 상장·상금·상품을 제공한다.</li>
+			<li>‘경기곤충 과학교실’은 유치원생들이 가정에서 곤충을 키우며 어릴 때부터 곤충과 친해질 수 있는 기회를 제공한다.</li>
+			<li>사전 신청한 도내 유치원생 200명은 애완곤충 암수 각 1마리씩과 교재를 받아 동영상 교육을 통해 곤충 사육을 체험하고 흥미와 지식을 쌓을 수 있다.</li> 
+		</ul>
+	</div>
+</body>
+</html>

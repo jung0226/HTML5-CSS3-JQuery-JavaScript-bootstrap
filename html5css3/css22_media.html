@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<meta name="viewport" content="width=device, initial-scale=1"/>
+	<style>
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}		
+		ul>li {
+			background-color:lightblue;
+			margin:5px 0;
+			padding:3px;
+			border:1px solid #ddd;
+			width:100%;
+			float:left;				
+		}
+		/* 반응형 스타일 지정 */
+		/*	      미디어 종류: all, screen, print, tv, projection,...*/
+		@media all and (min-width:320px) and (max-width:600px){
+			ul>li{
+				background-color:#ddd;
+				font-family:궁서체;
+			}
+			ul>li>img{
+				width:100%;
+				display:none;
+			}
+		}
+		@media all and (min-width:601px) and (max-width:800px){
+			ul>li{
+				background-color:pink;
+			}
+		}
+		@media all and (min-width:801px){
+			ul>li{
+				background-color:orange;
+				width:49%;
+				height:10vh;
+				overflow:hidden;
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>(서울=연합뉴스) 김아람 기자 = 카카오게임즈[293490]가 코스닥에 상장한 첫날인 10일 상한가로 직행하며
+			화려하게 증시에 입성했다.이날 오전 9시 19분 현재 코스닥시장에서 카카오게임즈는 시초가 4만8천원 대비
+			가격제한폭(30.00%)까지 치솟은 6만2천400원에 거래 중이다.</li>
+
+		<li>상장일에 개장과 동시에 이른바 '따상(시초가가 공모가의 2배로 결정된 후 상장 첫날 상한가)'을 기록했다.
+			공모가(2만4천원) 대비 상승률은 160%다.투자자들의 폭발적인 관심에 이 시각 기준 매수 대기물량만 3천만주를 넘었다.
+			개장 직후에는 정적 변동성 완화장치(VI)가 발동되기도 했다.</li>
+
+		<li>이에 따라 카카오[035720]게임즈 시가총액은 4조5천680억원으로 불어나 단숨에 코스닥 시총 순위 5위로
+			뛰어올랐다.카카오게임즈는 2013년 설립된 카카오의 게임 전문 자회사다. 올해 하반기 기업공개(IPO) 대어로 꼽혀온
+			카카오게임즈는 앞서 기록적인 청약 흥행몰이를 하며 주가 급등을 예고했다. 지난 1∼2일 주관사 3개사가 접수한 카카오게임즈의
+			일반청약 통합 경쟁률은 1천524.85대 1에 달했다.</li>
+
+		<li>청약 증거금만 58조5천543억원이 모였다. 이는 지난 6월 24일 SK바이오팜[326030]이 세운 최대
+			증거금 기록(30조9천899억원)의 2배에 육박하는 규모다. 황현준 DB금융투자[016610] 연구원은 "카카오의 자회사
+			1호 상장이고 기대 신작 게임 출시가 임박한 점, 최근 공모주 과열 양상 등을 고려하면 주가는 본질적 가치를 상회할 여지가
+			충분해 보인다"고 설명했다.</li>
+		<li>9시10분 현재 거래량은 33만여주로 상한가에 사자주문만 3천만주 가까이 쌓여있다. 이로써 카카오게임즈의
+			시가총액은 4조5680억원을 기록해 셀트리온제약을 제치고 코스닥 시장 시총 상위 5위에 올라섰다. 코스피 시장을 포함한 전체
+			순위는 55위(우선주, 상장지수펀드 제외)다.</li>
+		<li><img src="../img/jeju_map.jpg" /></li>
+	</ul>
+</body>
+</html>

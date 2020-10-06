@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+	body{
+		margin:0;
+		background-image:url(../img/noise.png);
+	}
+	#content{
+		background-image:url(../img/bg1.jpg);
+		width:1000px;
+		height:1200px;
+		margin: 0 auto;
+		background-repeat: no-repeat;
+	}
+	section>img{
+		width:100%;
+	}
+	#menu{
+		margin:0 120px;
+		height:149px;
+		list-style-type:none;
+		padding:0;
+	}
+	#menu a:link, #menu a:visited, #menu a:hover{
+		text-decoration: none;
+		color:#808;
+		font-size:1.5em;
+		font-weight:bold;
+	}
+
+</style>
+<script>
+	$(function(){
+		var menu=['MENU', 'ABOUT', 'WORK', 'CONTACT'];
+		var menuTag='';
+		menu.map(function(v,i){
+			menuTag+='<li><a href="">'+v+'</a></li>'
+		});
+		$("#menu").html(menuTag); //prepend(), append(), html()
+		$('#menu>li').css({
+			width:'25%',
+			lineHeight:'149px',
+			textAlign:'center',
+			float:'left',
+			backgroundImage:'url("../img/label.png")',
+			backgroundRepeat:'no-repeat',
+			backgroundPosition:'center -149px'
+		});
+		
+		//리본 show hover, 	mouseover,mouseout, 	mouseenter, mouseleave
+		/*$('#menu>li').on({
+			mouseenter:function(){
+				$(this).css('background-position','center 0px').css('transition-duration','1s');
+			},mouseleave:function(){
+				$(this).css('background-position','center -149px');
+				
+			}
+		});*/
+		$('#menu>li').hover(function(){
+			$(this).css('background-position','center 0px').css('transition-duration','1s');
+		},function(){
+			$(this).css('background-position','center -149px')
+		});
+		
+	})
+</script>
+</head>
+<body>
+	<div id="content">
+	<ul id="menu">
+	</ul>
+	<section><img src="../img/2.jpg"/></section>
+	</div>
+</body>
+</html>

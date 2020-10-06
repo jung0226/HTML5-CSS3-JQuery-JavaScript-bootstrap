@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*document.write("aaaaa");
+		function output(){
+			document.write("bbbb");
+		}*/
+		/* 문자열 관련 모듈들 */
+		//		 0 123 45678
+		var txt="자바스크립에서 문자열처리하기"; // 	\",\',\\,\n, \t alert에서 제어문자 사용가능
+		
+		//document.write("줄\n바꿈"); //적용 안 됨.
+		//alert("대화 상자에\n여러 줄로 \t메세지 표시하기");
+		document.write("length = "+ txt.length);
+		document.write("<br/>indexOf = "+txt.indexOf("문자열")); //없으면 -1
+		document.write("<br/>search = "+txt.search("문자열")); //없으면 -1
+		//substring(), slice(), substr() : 문자열 자를 때 사용
+		document.write("<br/>slice = "+txt.slice(3,7));
+		document.write("<br/>replace"+txt.replace("문자열","String"));
+		
+		var txt2="Hello, JavaScript..";
+		document.write("<br/>toUpperCase = "+ txt2.toUpperCase());
+		document.write("<br/>toLowerCase = "+ txt2.toLowerCase());
+		
+		//+ 문자연결
+		document.write("<br/>concat = "+ txt.concat(txt2));
+		document.write("<br/>charAt = "+ txt2.charAt(2));
+		document.write("<br/>charCodeAt = "+ txt2.charCodeAt(0));
+		
+		var splitData = txt2.split("a");
+		for(i=0;i<splitData.length;i++){
+			document.write("<br/>splitData["+i+"]="+splitData[i]);
+		}
+	</script>
+</head>
+<body>
+<br/>
+	<input type="button" value="click" onclick="output()"/>
+	
+
+</body>
+</html>

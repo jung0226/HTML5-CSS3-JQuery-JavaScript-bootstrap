@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		img{
+			width:200px;
+			height:200px;
+		}
+	</style>
+	<script>
+		function change(){
+			document.getElementById("i").src="../img/3.jpg";
+		}
+	</script>
+</head>
+<body>
+	<img src="../img/1.jpg" id="i" onclick="change()"/>
+								<!-- onmouseover, onclick, ..안에 javaScript가 들어감. -->
+	<img src="../img/2.jpg" id="i2" onmouseover="this.src='../img/4.jpg'" onmouseout="this.src='../img/2.jpg'"/>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	easing을 위한 환경설정
+	참고사이트: https://jqueryui.com/easing
+	
+	https://jqueryui.com/download/all/에서 다운로드 한다.	
+	* jQuery UI 1.12.1 (concatenated JS and CSS files)다운로드
+	
+	1. jquery-ui.min.css (지금 사용하는 폴더에 붙여넣기)
+	2. jquery-3.5.1.min.js
+	3. jquery-ui.min.js (지금 사용하는 폴더에 붙여넣기)
+	
+ -->
+<link rel="stylesheet" href="jquery-ui.min.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<style>
+	img{
+		width:100px;
+		height:100px;
+		position:absolute;
+	}
+</style>
+<script>
+	$(function(){
+		//																easing:움직이는 모양
+		$('#i1').animate({marginLeft:'1000px', maginTop:'600px'}, 5000,"easeOutBounce");
+	});
+</script>
+</head>
+<body>
+	<img src="../img/1.jpg" id="i1"/>
+</body>
+</html>

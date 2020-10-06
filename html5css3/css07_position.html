@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		/* left, top, right, bottm 속성: 좌표 속성
+		   position : absolute(절대 좌표), relative(상대 좌표), static(기본)
+		*/
+		#div1{
+			position:absolute;
+			width:300px; 
+			height:200px;
+			border:1px solid gray;
+			left: 100px; 
+			top: 50px;
+		}
+		#div2{
+			width:300px;
+			height:200px;
+			background:lightblue;
+		}
+		#div3{
+			position:absolute;
+			width:300px;
+			height:200px;
+			background:pink;
+			top:500px;
+			left:300px;
+		}
+		#div4{
+			width:100px;
+			height:100px;
+			background:orange;
+			position:absolute;
+			top:80px;
+			left:80px;
+		}
+		#div5, #div6, #div7{
+			width:100px;
+			height:100px;
+			border: 1px solid green;
+			background: cyan;
+		}
+		#div6{
+			position:relative;
+			left:50px;
+			top:50px;
+		}
+		#div8{
+			position:absolute;
+			left:100px;
+			bottom:20px;
+			background:yellow;
+			width:50px;
+			height:200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"> asdf </div>
+	<div id="div2">11111111</div> <!-- div1이 절대좌표로 이동했기 때문에 div1이 원래 들어갈 위치에 다음 실행문인 div2가 들어감. -->
+	<div id="div3">
+		22222222
+		<div id="div4">33333333333</div>
+	</div>
+	
+	<!-- relative -->
+	<hr/>
+	<div id="div5">5555555</div>
+	<div id="div6">6666666</div> <!-- 원래 있던 자리가 기준이 되어서 좌표를 구함. 자리를 옮겨도 원래 있던 자리도 차지하고 있어서 다음 실행문이 들어가지 않음. -->
+	<div id="div7">7777777</div>	
+	
+	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>
+	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>
+	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>	내용<br/>
+
+	<div id="div8">8888</div>
+
+</body>
+</html>

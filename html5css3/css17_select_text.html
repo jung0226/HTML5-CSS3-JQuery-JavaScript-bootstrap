@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		/*
+			텍스트 스타일
+			::first-letter -> 문단의 첫번째 문자에 스타일 적용
+			::first-line   -> 첫번째 줄에 스타일 적용
+			::selection	   -> 선택영역에 대한 스타일 적용
+		*/
+		#txt::first-letter{
+			font-size:25px;
+			color:red;
+			font-weight:bold;
+			background-color:#ddd;
+		}
+		#txt::first-line{
+			background-color:lightblue;
+			font-family:궁서체;
+			color:yellow;
+		}
+		#txt::selection{
+			color:#f00;
+			background:#000;
+		}
+		/*
+			부정선택자
+			:not() ->선택자를 제외한 나머지를 스타일 적용
+		*/
+		#aa>input:not([type=submit]){
+			background:green;
+		}
+	</style>
+</head>
+<!-- 
+	복사 금지 설정
+	oncontextmenu : 마우스 오른쪽 버튼 메뉴 제어
+	onselectstart : 선택시작 불가능
+	
+	ondragstart : 드래그 시작 불가능
+	ondragend : 드래그 종료 불가능
+ -->
+<body oncontextmenu="return false" onselectstart="return false">
+	<div id="aa">
+		<input type="text" name="a1"/><br/>
+		<input type="text" name="a2"/><br/>
+		<input type="password" name="a3"/><br/>
+		<input type="text" name="a4"/><br/>
+		<input type="submit" name="a5" value="클릭"/><br/>
+	</div>
+
+	<div id="txt">
+	(서울=연합뉴스) 신선미 김철선 기자 = 방역당국이 이달 중 신종 코로나바이러스 감염증(코로나19)에 대한 항체 치료제를 대량 생산할 수 있을 것으로 보인다고 전망했다.
+
+권준욱 중앙방역대책본부(방대본) 부본부장은 8일 정례 브리핑에서 "현재는 식품의약품안전처에서 임상 2상과 3상을 심사 중이며, 9월 중에는 상업용 항체 치료제 대량생산을 계획하고 있다"고 말했다.
+
+권 부본부장은 "지난 7월 17일 식품의약품안전처로부터 국내 임상 1상에 대한 승인을 받은 뒤 1상에 대한 결과를 완료하고 분석하는 중이고, 7월 29일에는 영국에서 임상 1상을 승인받고 환자 모집 후 현재 임상시험을 진행하고 있다"고 설명했다.
+	</div>
+
+</body>
+</html>

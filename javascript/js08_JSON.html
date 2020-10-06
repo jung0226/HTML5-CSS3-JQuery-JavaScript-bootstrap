@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		//JSON :JavaScript Object Notation이다.
+		//javascript에서 객체를 표시하는 방법.
+		
+		// JSON변수 설정 
+		var data={
+				username:"hong",
+				tel:"010-1234-1234",
+				addr:"서울시 마포구",
+				email:{
+					first_email:"asdfa@naver.com",
+					second_email:"qwerq@nate.com"
+				}				
+		};
+	
+		document.write("username= "+data.username+"<br/>");
+		document.write("addr= "+data.addr+"<br/>");
+		document.write("first_email= "+data.email.first_email+"<br/>");
+	</script>
+	
+
+</body>
+</html>

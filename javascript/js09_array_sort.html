@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function arraySort(){
+			var numData=[54,22,46,88,90,21,14,13,62];
+			var stringData=['max','apple','abs','campus','do','while','data','num'];
+			
+			document.getElementById("StringData").innerHTML = "문자데이터-> "+stringData;
+			document.getElementById("NumData").innerHTML = "숫자데이터-> "+numData;
+			//오른차순 정렬
+			//1. 문자를 오름차순으로 정렬
+			stringData.sort();
+			document.getElementById("StringAsc").innerHTML = "문자를 오름차순-> "+stringData;
+			//2. 숫자를 오름차순으로 정렬
+			numData.sort(function(x,y){return x-y;});
+			document.getElementById("NumAsc").innerHTML="숫자를 오름차순-> "+numData;
+			
+			//내림차순 정렬
+			//1. 문자를 내림차순으로 정렬
+			//	 오름차순으로 정렬하고 배열의 데이터를 뒤집기하면 내림차순 정렬이 된다.
+			stringData.reverse();
+			document.getElementById("StringDesc").innerHTML="문자를 내림차순-> "+stringData;
+			//2. 숫자를 내림차순으로 정렬
+			numData.sort(function(x,y){return y-x;});
+			document.getElementById("NumDesc").innerHTML="숫자를 오름차순-> "+numData;
+		}
+	</script>
+</head>
+<body onload="arraySort()">
+	<div id="StringData"></div>
+	<div id="NumData"></div>
+	<div id="StringAsc"></div>
+	<div id="NumAsc"></div>
+	<div id="StringDesc"></div>
+	<div id="NumDesc"></div>
+</body>
+</html>

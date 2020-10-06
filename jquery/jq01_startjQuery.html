@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- 
+		jquery.com에서 jquery라이브러리 다운로드
+		min이 있으면 최소 버전, min이 없으면 full버전
+	 -->
+	<script src="jquery-3.5.1.min.js"></script>
+	<script>
+		//jqueryCode  --이벤트에 호출된다.
+		//선택자		이벤트
+		$(document).ready(function(){
+			//실행부
+			console.log("jquery에서 document ready 이벤트 발생함.");
+		});
+		
+		function startJavaScript(){
+			console.log("자바스크립트 이벤트로 호출됨.");
+		}
+	</script>
+</head>
+<body onload="startJavaScript()">
+	<h1>JQuery시작하기</h1>
+</body>
+</html>

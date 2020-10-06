@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 테이블 만들기
+		table 태그 : 표의 범위
+		tr 태그 : 줄을 생성
+		td 태그 : 칸을 생성
+		th 태그 : title로 설정하고 싶은 칸을 생성한다.
+		caption 태그 : 표의 상단에 제목을 표시해준다. table태그 안에만 작성하면 됨. tr사이에 작성해도 됨.
+		colgrounp 태그 : 열 단위로 적용할 수 있다.
+		
+		음성 번역기가 표의 상단, 바디, 하단을 인지함. 화면상에는 안 나타남.
+		thead
+		tbody
+		tfoot
+		
+		속성
+		width : px, %
+		height :px
+		cellspacing, cellpadding, background, bgcolor...
+	 -->
+	 <table border="1" width="800">
+		<caption style="font-size: 25px; color: blue"><b>시간표</b></caption>
+	 	<colgroup>
+	 		<col span="2" style="background-image:url(../img/surround.png)"/>
+	 		<col style="background:#dddddd"/>	 		
+	 	</colgroup>
+	 	<!-- 첫 번째 줄 -->
+	 	<thead>
+	 	<tr>
+	 		<!-- 칸 생성 -->
+	 		<th width="300">첫 번째</th>
+	 		<td><img src="../img/heart.png" width="100"/></td>
+	 		<td width="300">세 번째 </td>
+	 	</tr>
+	 	</thead>
+	 	<tbody>
+	 	<tr height="300" >
+	 		<td>AAAAAAAA</td>
+	 			<!-- span 태그 : 줄 안 바뀌고 범위만 잡아줌. 아무런 기능 없음. -->
+	 		<td style="background:pink">BBBBBBBB <span style="font-weight:bold">BBBBBBBBBB</span> BBBB</td>
+	 		<td>CCCCCCCC<br/>
+	 			<table border="1" width="100%">
+	 				<tr>
+	 					<td>1111</td>
+	 					<td>222</td>
+	 				</tr>
+	 				<tr>
+	 					<td>3333</td>
+	 					<td>4444</td>
+	 				</tr>
+	 			</table>
+	 		</td>
+	 	</tr>
+	 	</tbody>
+	 </table>
+
+</body>
+</html>

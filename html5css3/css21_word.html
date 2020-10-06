@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		div{
+			width:500px;
+			border: 1px solid gray;
+			background-color:lightblue;
+			margin:20px;
+		}
+		.txt1{
+			white-space:nowrap;/*줄을 바꾸지 않음.*/
+			overflow:hidden;
+			text-overflow:ellipsis;/*줄임표시 ...로 표시됨.*/
+		}
+		.txt2{			
+			line-height:25px;/*한 행(줄)의 크기*/
+			height:75px; /*보여지는 행(줄)의 수와 크기를 똑같이.*/
+			display:-webkit-box;
+			-webkit-line-clamp:3;/*행(줄)의 수*/
+			-webkit-box-orient:vertical;
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+	</style>
+</head>
+<body>
+	<!--한줄 줄임-->
+	<div class="txt1">
+		aaaaaaaaaaaaaaaaaaaaaaaaaqqqqqqqqqqqqqqqqqqqqqqaaaaaaaaaaaaaaaaaaaaaaaa
+	</div>
+	<div class="txt2">
+	(서울=연합뉴스) 김아람 기자 = 카카오게임즈[293490]가 코스닥에 상장한 첫날인 10일 상한가로 직행하며 화려하게 증시에 입성했다.
+	이날 오전 9시 19분 현재 코스닥시장에서 카카오게임즈는 시초가 4만8천원 대비 가격제한폭(30.00%)까지 치솟은 6만2천400원에 거래 중이다.
+	</div>
+</body>
+</html>

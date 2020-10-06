@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body{
+			background:#ECECEE;
+			padding:0;
+			margin:0;
+		}
+		#form{
+			width:700px;
+			height:600px;
+			background:white;
+			margin: 0 auto;
+			padding:0;
+			overflow:auto;
+		}
+		div{
+			float:left;
+		}
+		#div1{
+			width: 380px;
+			padding: 30px;		
+		}
+		#div2{
+			padding: 0px 50px;			
+		}
+		input[type=submit]{
+			background-color:#4D87EF;
+			border:0px;
+			color: white;
+			font-size: 20px;
+			width: 270px;
+			padding:10px;
+			margin:5px;
+			
+		}
+		input[type=text], input[type=password]{
+			margin:5px;
+			padding:10px;
+			font-size:20px;
+		}
+		input[type=text]:focus, input[type=password]:focus{
+			background-color:#E8F2FE;
+			border-color:blue;
+		}
+		label{
+			font-size:12px;
+		}
+		
+		a:link, a:visited{
+			text-decoration:none;
+			color:gray;
+			font-size:12px;
+		}
+		a:hover{
+			text-decoration:underline;
+		}
+		#ip{
+			padding: 0 0 0 90px;
+		}
+		#ipbtn{
+			background-color:white;
+			border-style: none;
+			color:blue;
+		}
+		hr{
+			color:#ddd;
+			size:1px;
+			clear:left;
+		}
+		#ad{
+			width:200px;
+			margin:40px 10px;
+		}
+		#footer{
+			padding:10px 265px;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" action="a.jsp" id="form">
+	<a href="https://www.daum.net/"><img src="daum.png" width=700/></a>
+	<hr/>
+	<div id="div1">
+	
+		<input type="text" name="userid" placeholder="아이디 입력"/><br/>
+		<input type="password" name="userpwd" placeholder="비밀번호 입력"/><br/>
+		<input type="submit" value="로그인"/><br/>
+		<input type="checkbox" value="로그인상태유지"> <label>로그인 상태 유지 </label>
+		<a href="#" id="ip">IP보안</a>
+		<input type="button" value="on" id="ipbtn"/>
+		<br/>
+		<br/>
+		<div id="div2">
+		<a href="https://member.daum.net/find/id.do?action=home">아이디 찾기</a> | 
+		<a href="https://member.daum.net/find/password.do?action=daumid-check">비밀번호 찾기</a>	
+		</div>
+	</div>
+	<div>
+		<a href="#"><img src="ad.png" id="ad"/></a>
+	</div>
+	
+	<hr/>
+	<div id="footer">
+		<a href="https://www.kakaocorp.com/">@kakao Corp</a> |
+		<a href="https://cs.daum.net/faq/59/14970.html">고객센터</a>
+	</div>
+	
+	</form>
+
+</body>
+</html>

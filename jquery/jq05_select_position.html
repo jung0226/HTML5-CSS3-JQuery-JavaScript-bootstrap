@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>위치선택자</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			// :first : 첫번째 객체 선택
+			$("#menu>li:first").css("color","green");
+			// :last : 마지막 객체 선택
+			$("#menu>li:last").css("color","blue");
+			// :even : 짝수번째 객체 선택 (0,1,2,3,....)
+			$("#menu>li:even").css("background-color","pink");
+			// :odd : 홀수 번째 객체 선택(0,1,2,3,.....)
+			$("#menu>li:odd").css("background-color","orange");
+			// :nth-last-of-type(n) : 뒤에서 n번째 객체 선택
+			$("#menu>li:nth-last-of-type(3)").css("color","red");
+			// :nth-child(2n) : 홀수, 짝수, 3의 배수, ... 번째 객체 선택 
+			$("#menu>li:nth-child(3n)").css("border","2px solid yellow");
+			
+			// 선택자의 부모 중 자식이 1개인 경우 선택
+			$("li:only-child").css("background-color","lightblue");
+			
+			// slice() : 특정 index이후의 모든 객체 선택
+			$("#menu>li").slice(3).css("background-color","green");
+			
+			// eq() : 특정 index위치의 객체를 선택
+			$("#menu>li").eq(2).css("border","solid 5px red");
+			
+			// lt(n) : lest than index
+			// gt(n) : great than
+			$("#menu>li:lt(3)").css("background-color","yellow");
+
+			$("#menu>li:gt(3)").css("background-color","pink");
+			
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>위치선택자</li>
+	</ul>
+	<ul id="menu">
+		<li>html5/css3</li>
+		<li>javascript</li>
+		<li>jquery</li>
+		<li>bootstrap</li>
+		<li>ajax</li>
+		<li>jsp</li>
+		<li>spring</li>
+		<li>mybatis</li>
+	</ul>
+</body>
+</html>

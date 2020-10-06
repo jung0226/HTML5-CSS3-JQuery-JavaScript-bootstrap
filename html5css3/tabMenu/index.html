@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	#maindiv {
+		width: 600px;
+		height: 516px;
+		background: #fff;
+		margin: 0px auto;
+		padding: 0px;
+		border: 1px solid #ddd;
+	}
+	a:link, a:visited, a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		float: left;
+	}
+	
+	li {
+		list-style-type: none;
+		width: 175px;
+		height: 150px;
+		margin: 5px 5px 0px;
+		border: 1px solid #ddd;	
+		float: left;
+		font-size:13px;
+		overflow:hidden;
+	}
+	
+	#ul1 {
+		margin: 15px 0 0 15px;
+		width: 375px;
+		height: 335px;
+	}
+	#ul1>li{
+		margin-bottom:15px;
+	}
+	#ul2{
+		margin: 15px 15px 0 0;
+	}
+	#ul3{
+		margin: 0 15px ;
+		}
+	
+	.q {
+		display:block;
+		margin: 5px 5px;
+		width: 170px;
+		height: 30px;
+		font-weight: bold;
+		text-overflow:ellipsis;		
+	}
+	
+	.q::first-letter {
+		color: #32BED4;
+		font-weight: bold;
+	}
+	
+	.a {
+		margin: 5px 5px;
+		width: 170px;
+		height: 30px;
+		text-overflow: ellipsis;
+	}
+	
+	.a::first-letter {
+		font-weight: bold;
+	}
+	
+	#ul2>li {
+		height: 323px;
+	}
+	.imgtxt{
+		font-weight: bold;
+	}
+	span{
+		font-weight: normal;
+		font-size:8px;
+	}
+	
+	</style>
+</head>
+<body>
+	<!-- 180,320 -->
+	<div id="maindiv">
+		<ul id="ul1">
+			<li><a href="#">
+					<div class="q">Q 헐리우드 영화에서 러시안인이 주로 악당으로</div> <br />
+					<div class="a">A 냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요.</div>
+			</a></li>
+			<li><a href="#">
+					<div class="q">Q '독도'이름의 유래를 알려주세요.</div> <br />
+					<div class="a">A 독도와 관련된 명칭은 시대에 따라 문헌에 아주 다양하게 나옵니다. 조선</div>
+			</a></li>
+			<li><a href="#">
+					<div class="q">Q 매실청은 당뇨에 해로운가요?</div> <br />
+					<div class="a">A 매실청은 설탕으로 매실을 발효시킨 식품으로 당분이 많이 함유되어 있습니다.</div>
+			</a></li>
+			<li><a href="#">
+					<div class="q">Q 108배가 다이어트에 도움이 되나요?</div> <br />
+					<div class="a">A 108배를 하면 땀도 굉장히 많이 나고 전신운동이 되기 때문에 운동 효과</div>
+			</a></li>
+		</ul>
+		<ul id="ul2">
+			<li><a href="#"><img src="img/tab2_1.png" /></a></li>
+		</ul>
+		<ul id="ul3">
+			<li><a href="#"><img src="img/tab2_2.png"/></a><br/>
+				<div class="imgtxt">견과류의 하루 적정 섭취량<br/>				
+				<span>견과류</span></div>
+				
+			</li>
+			<li><a href="#"><img src="img/tab2_3.png"/></a><br/>
+				<div class="imgtxt">날벌레가 빛에 몰려드는 이유<br/>
+				<span>곤충</span></div>
+				
+			</li>
+			<li><a href="#"><img src="img/tab2_4.png"/></a><br/>
+				<div class="imgtxt">냉면의 유래와 역사<br/>
+				<span>음식</span></div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

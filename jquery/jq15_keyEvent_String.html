@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	#reply{
+		width:400px;
+		height:100px;
+	}
+</style>
+<script>
+	$(function(){
+		$('#reply').keyup(function(){
+			//#reply글자수
+			var cnt = $('#reply').val().length;
+			$('span').text(100-cnt); //text(), html()			
+		});
+	});
+</script>
+</head>
+<body>
+	남은 문자 수 : <span>100</span><br/>
+	<textarea id='reply' maxlength="100"></textarea>
+</body>
+</html>

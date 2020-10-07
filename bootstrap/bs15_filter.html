@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+	$(function(){
+		//검색어를 입력하면 호출하는 이벤트
+		 $('#searchWord').keyup(function(){
+			 var word = $('#searchWord').val().toLowerCase();// toLowerCase() toUpperCase()
+			 //
+			 $('#memList>tr').filter(function(){
+				// var trTxt = $(this).text().toLowerCase(); //this는 tr
+				// var idx = trTxt.indexOf(word); //	trTxt.search(word);
+				 var trTxt = $(this).text().toLowerCase().indexOf(word); // -1, 0, 1, 2, 3..
+				 // true : 보임(기본), false : 안 보임
+				 $(this).toggle(trTxt>-1);
+				 
+			 });
+		 });
+	});
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Filter Test</h1>
+		<input type="text" id="searchWord" placeholder="Search" class="form-control"/>
+		<hr/>
+		<table class="table">
+			<thead>
+			<tr>
+				<td>FirstName</td>
+				<td>LastName</td>
+				<td>Phone</td>
+				<td>Email</td>
+			</tr>
+			</thead>
+			<tbody id="memList">
+			<tr>
+				<td>mary</td>
+				<td>hee</td>
+				<td>010-4154-7845</td>
+				<td>mary1234@naver.com</td>
+			</tr>
+			<tr>
+				<td>so</td>
+				<td>jeong</td>
+				<td>010-3334-7685</td>
+				<td>so777@nate.com</td>
+			</tr>
+			<tr>
+				<td>park</td>
+				<td>young</td>
+				<td>010-7545-2224</td>
+				<td>park2@gmail.com</td>
+			</tr>
+			<tr>
+				<td>lee</td>
+				<td>woo</td>
+				<td>010-1234-3432</td>
+				<td>leewoo224@nate.com</td>
+			</tr>
+			<tr>
+				<td>scott</td>
+				<td>tiger</td>
+				<td>010-8978-7845</td>
+				<td>tiger777@daum.net</td>
+			</tr>
+			<tr>
+				<td>arim</td>
+				<td>ju</td>
+				<td>010-1233-3345</td>
+				<td>ju1234@gmail.com</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

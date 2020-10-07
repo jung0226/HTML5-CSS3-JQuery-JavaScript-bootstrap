@@ -1,0 +1,57 @@
+-<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="bootstrap.js"></script>
+<style>
+	.container{
+		padding:200px;
+	}
+</style>
+<script>
+	$(function(){
+		$("[data-toggle=tooltip]").tooltip();
+		$("[data-toggle=popover]").popover();
+	});
+</script>
+</head>
+<body>
+	<!-- tooltip, popover를 사용하기 위해서는 poper.js가 있어야 한다. -->
+	<div class="container">
+	<!-- 
+		data-toggle="tooltip" : 현재테그가 풍선도움 기능을 가진다.
+		
+		title속성 : 풍선도움말 내용
+		data-placement : 풍선도움말 표시 위치(top, right, bottom, left)
+	 -->
+		<h1 data-toggle="tooltip" title="풍선도움말///" data-placement="top">Tooltip 테스트</h1>
+		<div data-toggle="tooltip" title=" 0.44%///" data-placement="left">
+			이날 오전 9시 7분 기준 코스피는 전 거래일보다 0.44%(10.38포인트) 내린 2,355.52를 기록했다. 
+			지수는 전장보다 0.64%(15.08포인트) 내린 2,350.82에 개장해 하락세를 보이고 있다. 
+			도널드 트럼프 미국 대통령의 민주당과 경기 부양책 협상 중단 선언에 따른 투자 심리 위축이 장 초반 하락세의 배경으로 지목된다.
+		</div>
+		
+		<h1>popover를 이용한 풍선 도움말</h1>
+		<!-- 
+			풍선 도움말에 제목과 내용이 있는 것을 말한다.
+			
+			title속성 : 풍선 도움말의 제목
+			data-content속성 : 풍선도움말의 내용
+		-->
+		<div class="list-group">
+			<a href="#" class="list-group-item" title="노벨물리학" data-content="블랙홀 발견" data-toggle="popover" data-placement="top" data-trigger="hover">올해 노벨물리학상은 블랙홀 발견과 연구에 기여한 로저 펜로즈, 레인하드 겐젤, 안드레아 게즈 3명에게 돌아갔습니다.</a>
+			<a href="#" class="list-group-item" title="수상자" data-content="상금 900만크로나(약 10억9천만원)" data-toggle="popover" data-placement="right" data-trigger="hover">수상자에게는 상금 900만크로나(약 10억9천만원)가 주어집니다.</a>
+			<a href="#" class="list-group-item" title="시상식" data-content="12월 10일 스웨덴 스톡홀름" data-toggle="popover" data-placement="bottom" data-trigger="hover">노벨상 시상식은 그동안 매년 12월 10일 스웨덴 스톡홀름에서 열렸지만,</a>
+			<a href="#" class="list-group-item" title="온라인" data-content="(코로나19) 여파" data-toggle="popover" data-placement="left" data-trigger="hover">
+				<h2>올해는 신종 코로나바이러스 감염증(코로나19) 여파로</h2>
+			 	<p>온라인으로 대체됩니다.</p>
+			 </a>			
+		</div>
+	</div>
+</body>
+</html>

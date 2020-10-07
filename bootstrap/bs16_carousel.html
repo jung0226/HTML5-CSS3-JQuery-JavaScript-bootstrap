@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+<style>
+	.carousel-inner img{
+		width:100%;
+		height:500px;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 											  화면전환 속도 -->
+		<div id="slideImg" class="carousel slide" data-ride="carousel" data-interval="2000"><!-- carousel -->
+			<!-- 하단 컨트롤러 -->
+			<ul class="carousel-indicators">
+				<li data-target="#slideImg" data-slide-to="0" class="active"></li>
+				<li data-target="#slideImg" data-slide-to="1"></li>
+				<li data-target="#slideImg" data-slide-to="2"></li>
+				<li data-target="#slideImg" data-slide-to="3"></li>
+			</ul>
+			<!-- 이미지 목록 만들기 -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="../img/bg5.jpg"/>
+					<!-- 이미지 위에 설명쓰기 -->
+					<div class="carousel-caption">
+						<h2>라이언</h2>
+						<p>카카오 프렌즈 대장</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../img/bg2.jpg"/>
+					<!-- 이미지 위에 설명쓰기 -->
+					<div class="carousel-caption">
+						<h2>스누피</h2>
+						<p>생일파티</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../img/bg3.jpg"/>
+					<!-- 이미지 위에 설명쓰기 -->
+					<div class="carousel-caption">
+						<h2>스누피2</h2>
+						<p>지붕 위에</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="../img/bg4.jpg"/>
+					<!-- 이미지 위에 설명쓰기 -->
+					<div class="carousel-caption">
+						<h2>스누피3</h2>
+						<p>바다</p>
+					</div>
+				</div>
+			</div>
+			<!-- 좌우 컨트롤러 -->
+			<a href="#slideImg" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+			<a href="#slideImg" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+		</div><!-- carousel -->	
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jusorok>
+	<record>
+		<username>홍길동</username>
+		<tel>010-1111-2222</tel>
+		<address>서울시 마포구</address>
+	</record>
+	<record>
+		<username>세종대왕</username>
+		<tel>010-7777-8888</tel>
+		<address>서울시 중구</address>
+	</record>
+	<record>
+		<username>강감찬</username>
+		<tel>010-4545-7878</tel>
+		<address>서울시 서대문구</address>
+	</record>
+	<record>
+		<username>이순신</username>
+		<tel>010-9595-8686</tel>
+		<address>서울시 종로구</address>
+	</record>
+	<record>
+		<username>정약용</username>
+		<tel>0101-4857-1542</tel>
+		<address>경기도 성남</address>
+	</record>
+
+</jusorok>

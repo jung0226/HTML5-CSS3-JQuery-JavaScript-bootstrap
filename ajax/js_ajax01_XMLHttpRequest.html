@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<style>
+	#result{
+		height: 300px;
+		border: 1px solid gray;
+	}
+</style>
+<script>
+	function ajaxLoadStart(){
+		//ajax처리를 하는 javascript객체를 생성한다.
+		var xHttp = new XMLHttpRequest(); //웹 서버에 데이터를 요청하고 받을 수 있는 객체
+		
+		//서버에서 정보를 얻어와 xHttp에 내용이 변경되면 자동으로 호출되는 이벤트
+		xHttp.onreadystatechange = function(){
+			/*
+				this.readyState : XMLHttpRequest의 처리상태
+								  0: 초기화 실패, 1: 서버와 연결된 상태, 2: 서버에 요청 접수, 3: 서버에 처리 요청, 4: 요청 완료.
+				this.status : 요청상태를 반환.
+							  200: 정상처리, 403: 사용금지된 페이지, 404: 찾을 수 없는 페이지 
+				this.statusText : "OK" : 정상데이터, "Not Found" : 정상데이터 아닐때	  
+				this.responseText : 전송받은 값(데이터)
+			*/
+			console.log(this.readyState);
+			console.log("this.status= "+this.status);
+			console.log("this.statusText= "+this.statusText);
+			console.log("this.responseText= "+this.responseText);
+			
+			if(this.readyState==4 && this.status==200){
+				document.getElementById('result').innerHTML=this.responseText;
+			}
+		}
+		
+		//서버에 데이터를 요청하기 post, get방식
+		//	데이터 전송방식(post, get), 서버에서 읽어올 파일명, 요청여부(true, false)
+		xHttp.open("GET", 			"memo.txt", 	  true);
+		xHttp.send();//서버에 데이터 요청을 보냄.
+		
+		
+	}
+</script>
+</head>
+<body onload="setInterval('ajaxLoadStart()',2000)">
+	<h1>JavaScript에서 Ajax구현하기 : XMLHttpRequest</h1>
+	<p>
+		비동기식으로 서버에 접속할 수 있다.
+	</p>
+	<button onclick="ajaxLoadStart()">서버에서 정보 얻어오기</button>
+	<div id="result"></div>
+	<img src="../img/2.jpg"/>
+</body>
+</html>

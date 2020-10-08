@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=deivce, initial-scale=1"/>
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+	$(function(){
+		$.ajax({
+			url:'ajax_weather.xml',
+			dataType:'xml',
+			success:function(result){
+				if($(result).find('data').length>0){
+					$(result).find('data').each(function(){
+						var hour = $(this).find('hour').text();
+					});
+				}
+			},
+			error:function(){
+				console.log("error= "+error);				
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<table class="table table-hover"><tbody id="weather"></tbody></table>
+
+</body>
+</html>
